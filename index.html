@@ -526,8 +526,9 @@ function enterApp() {
 // ══════════════════════════════════════════
 async function api(endpoint, method='GET', body=null) {
   const opts = {
+ const opts = {
     method,
-    headers: {'Content-Type':'application/json', 'Authorization':'Bearer '+TOKEN}
+    headers: {'Content-Type':'application/json', 'Authorization':'Bearer '+TOKEN, 'ngrok-skip-browser-warning':'69420'}
   };
   if (body) opts.body = JSON.stringify(body);
   const r = await fetch(API+endpoint, opts);
